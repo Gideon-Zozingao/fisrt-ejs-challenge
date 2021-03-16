@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="./public/css/main.css">
+    <title><%=title%></title>
+</head>
+<body>
+  <div class="main">
+    <h1><%=Heading%></h1>
+    <div class="profile-viewer">
+
+    </div>
+
+    <%
+      if(data){%>
+
+<table border="1" class="tbl profiles">
+  <thead><h2>Peoples Profile Data</h2></thead>
+  <tr><th>Name</th><th>Age</th><th>Hobbies</th></tr>
+        <%
+        for(person of data){
+
+%> <tr>
+  <td><em><% if(person.name!==undefined){%>
+<b><%=person.name%></b><%
+}else{%>
+ Name Missing
+<%}%>
+  </em></td>
+
+  <td><% if(person.age!==undefined){%>
+<b><%=person.age%></b><%
+}else{%>
+ Age Missing
+<%}%>
+  </td>
+  <td><% if(person.hobbies!==undefined){%>
+<i><%=person.hobbies%></i><%
+}else{%>
+ Hobies are Mising
+<%}%>
+  </td> </tr><%
+
+        }
+    %></table><%  }
+    %>
+  </div>
+
+</body>
+</html>
